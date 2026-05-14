@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Restaurant Website</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body{
+font-family:Arial,sans-serif;
+background:#f8f9fa;
+scroll-behavior:smooth;
+}
+.navbar{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+padding:15px 0;
+}
+.navbar-brand{
+font-size:30px;
+font-weight:bold;
+color:#dc3545 !important;
+}
+.nav-link{
+color:#333 !important;
+margin-right:10px;
+font-weight:500;
+}
+.nav-link:hover{
+color:#dc3545 !important;
+}
+.search-box{
+border:2px solid #dc3545;
+border-radius:10px;
+overflow:hidden;
+}
+.search-box input{
+border:none;
+outline:none;
+box-shadow:none !important;
+}
+.search-box button{
+border:none;
+background:white;
+padding:8px 15px;
+}
+.hero{
+height:90vh;
+background:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+.hero::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+.hero-content{
+position:relative;
+z-index:2;
+}
+.hero h1{
+font-size:65px;
+font-weight:bold;
+}
+.hero p{
+font-size:22px;
+margin-top:10px;
+}
+section{
+padding:70px 0;
+}
+.section-title{
+text-align:center;
+margin-bottom:50px;
+font-weight:bold;
+}
+.food-card{
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+.food-card:hover{
+transform:translateY(-10px);
+}
+.food-card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+.food-content{
+padding:20px;
+}
+.banner{
+background:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+position:relative;
+text-align:center;
+color:white;
+padding:100px 20px;
+}
+.banner::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+top:0;
+left:0;
+}
+.banner-content{
+position:relative;
+z-index:2;
+}
+iframe{
+width:100%;
+height:300px;
+border:0;
+border-radius:10px;
+}
+footer{
+background:#111827;
+color:white;
+padding:40px 0 20px;
+}
+footer input{
+padding:8px;
+width:70%;
+border:none;
+}
+footer button{
+padding:8px 15px;
+border:none;
+background:#dc3545;
+color:white;
+}
+.copyright{
+border-top:1px solid rgba(255,255,255,0.2);
+margin-top:20px;
+padding-top:10px;
+text-align:center;
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top bg-white shadow">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex gap-3">
+      <a href="#" class="text-dark"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-dark"><i class="bi bi-twitter"></i></a>
+    </div>
+    <a class="navbar-brand fw-bold text-danger" href="#">
+      Foodies
+    </a>
+    <button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav me-auto">
+<li class="nav-item">
+<a class="nav-link" href="#">
+Home
+</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"
+href="#"
+role="button"
+data-bs-toggle="dropdown">
+Menu
+</a>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="#foods">
+Foods
+</a>
+</li>
+<li>
+<a class="dropdown-item" href="#offers">
+Offers
+</a>
+</li>
+</ul>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#contact">
+Contact
+</a>
+</li>
+</ul>
+<form class="d-flex search-box">
+<input class="form-control"
+type="search"
+placeholder="Search Food">
+<button type="submit">
+<i class="bi bi-search"></i>
+</button>
+</form>
+</div>
+<div class="text-dark me-3">
+  <i class="bi bi-envelope"></i>food@gmail.com
+  <span class="ms-3">
+    <i class="bi bi-telephone"></i> +91 9000538210
+  </span>
+</div>
+</div>
+</nav>
+<section class="hero">
+<div class="hero-content">
+<h1>Delicious Food</h1>
+<p>Taste The Best Dishes In Town</p>
+<button class="btn btn-danger btn-lg mt-3">
+Order Now
+</button>
+</div>
+</section>
+<section id="foods">
+<div class="container">
+<h2 class="section-title">
+Popular Dishes
+</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop">
+<div class="food-content">
+<h4>Pizza</h4>
+<p>Cheesy and delicious Italian pizza.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+  <div class="food-card">
+    <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1200&auto=format&fit=crop">
+    <div class="food-content">
+      <h4>Indian Thali</h4>
+      <p>Traditional Indian meals with rich flavors and spices.</p>
+    </div>
+  </div>
+</div>
+<div class="col-md-4">
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+<div class="food-content">
+<h4>Healthy Salad</h4>
+<p>Fresh and healthy green salads.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="offers" style="background:white;">
+<div class="container">
+<h2 class="section-title">
+Special Offers
+</h2>
+<div class="row g-4">
+<div class="col-md-4">
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=1200&auto=format&fit=crop">
+<div class="food-content">
+<h4>Combo Meal</h4>
+<p>Get combo meals at special prices.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop">
+<div class="food-content">
+<h4>Family Pack</h4>
+<p>Perfect meal packages for families.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="food-card">
+<img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?q=80&w=1200&auto=format&fit=crop">
+<div class="food-content">
+<h4>Desserts</h4>
+<p>Sweet desserts for every occasion.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="banner">
+<div class="banner-content">
+<h2>Enjoy Amazing Food Everyday</h2>
+<p>Fresh ingredients and tasty recipes.</p>
+<button class="btn btn-danger">
+Explore Menu
+</button>
+</div>
+</section>
+<section id="contact" style="background:white;">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<h3>Visit Our Restaurant</h3>
+<iframe src="https://www.google.com/maps?q=Tadepalligudem,Andhra Pradesh&output=embed"
+width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+<div class="col-md-6">
+
+<h3>Book A Table</h3>
+<form id="bookingForm">
+<div class="mb-3">
+<input type="text" class="form-control"  placeholder="Your Name"  required>
+</div>
+<div class="mb-3">
+<input type="email" class="form-control"  placeholder="Your Email" required>
+</div>
+<div class="mb-3">
+<input type="text" class="form-control" placeholder="No.of people" required>
+</div>
+<div class="mb-3">
+<textarea class="form-control" rows="5" placeholder="Message"></textarea>
+</div>
+<button class="btn btn-dark w-100">
+Submit
+</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+<h4>Foodies</h4>
+<p>Serving happiness with delicious food.</p>
+</div>
+<div class="col-md-4">
+<h5>Quick Links</h5>
+<p>Home</p>
+<p>Menu</p>
+<p>Contact</p>
+</div>
+<div class="col-md-4">
+<h5>Feedback</h5>
+<input type="email"
+placeholder="Enter Email">
+<button>Send</button>
+</div>
+</div>
+<div class="copyright">
+© 2026 Foodies Restaurant. All Rights Reserved.
+</div>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById("bookingForm")
+.addEventListener("submit",function(e){
+e.preventDefault();
+alert("Table Booked Successfully!");
+this.reset();
+});
+</script>
+</body>
+</html>
